@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirect</title>
+
+<script>
+
+function redirect() {
+
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+
+  const isInstagram = ua.includes("Instagram");
+
+  if (isInstagram) {
+
+      // tentativa abrir chrome android
+      window.location.href = "intent://google.com#Intent;scheme=https;package=com.android.chrome;end";
+
+      setTimeout(function(){
+          window.location.href = "https://google.com";
+      },1500);
+
+  } else {
+
+      window.location.href = "https://google.com";
+
+  }
+
+}
+
+</script>
+
+</head>
+
+<body onload="redirect()">
+
+<p>Redirecionando...</p>
+
+</body>
+</html>
